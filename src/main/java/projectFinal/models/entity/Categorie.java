@@ -1,4 +1,4 @@
-package projectFinal.mapper.entity;
+package projectFinal.models.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -6,23 +6,21 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Getter @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Commande {
+public class Categorie {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    private LocalDate date;
-    private boolean isComplet;
-    private boolean isAnnul;
+    private String nom;
+    private String description;
 
-    @ManyToOne
-    private Client client_id;
-
+    @OneToMany(mappedBy = "categorie")
+    private List<Article> articles;
 }

@@ -1,4 +1,4 @@
-package projectFinal.mapper.entity;
+package projectFinal.models.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -29,4 +29,11 @@ public class Article {
     @ManyToOne
     private Categorie categorie;
 
+    public Article(String nom, String description, float prix, boolean actif, int stock) {
+        this.nom = nom;
+        this.description = description;
+        this.prix = prix;
+        this.actif = actif;
+        this.stock = stock;
+    }
 }

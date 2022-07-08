@@ -28,7 +28,7 @@ public class SecurityConfig {
 
         http.authorizeRequests()
                 .antMatchers("h2-console/**").permitAll()
-                .antMatchers("/admin", "/fournisseur").hasRole("ADMIN")
+                .antMatchers("/admin", "/fournisseur", "/article/update", "/commande").hasRole("ADMIN")
                 .mvcMatchers("/login", "/client/register").anonymous()
                 .antMatchers("/client/info").authenticated()
                 .anyRequest().permitAll();

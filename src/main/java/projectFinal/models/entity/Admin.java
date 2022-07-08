@@ -1,4 +1,4 @@
-package projectFinal.mapper.entity;
+package projectFinal.models.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
