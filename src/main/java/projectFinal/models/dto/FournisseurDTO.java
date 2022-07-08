@@ -16,4 +16,6 @@ public class FournisseurDTO {
 
     private List<ArticleDTO> articles;
 
+    public FournisseurDTO() {
+    }
 }

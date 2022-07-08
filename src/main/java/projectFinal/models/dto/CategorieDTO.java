@@ -12,6 +12,10 @@ public class CategorieDTO {
     private long id;
     private String nom;
     private String description;
+
     private List<ArticleDTO> articles;
+
+    public CategorieDTO(){
+    }
 
 }

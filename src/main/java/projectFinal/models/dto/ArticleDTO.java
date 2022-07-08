@@ -2,6 +2,7 @@ package projectFinal.models.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import projectFinal.models.entity.Fournisseur;
 
 @Data
 @AllArgsConstructor
@@ -15,6 +16,11 @@ public class ArticleDTO {
     private int stock;
 
     private FournisseurDTO fournisseur;
+
+    public ArticleDTO() {
+
+    }
+
     @Data
     public class FournisseurDTO{
         private String nom;

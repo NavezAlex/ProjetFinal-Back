@@ -30,4 +30,5 @@ public class Fournisseur {
         this.adresse = adresse;
         this.telephone = telephone;
     }
+
 }
