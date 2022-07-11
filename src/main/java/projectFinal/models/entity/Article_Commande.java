@@ -18,10 +18,10 @@ public class Article_Commande {
     private int id;
 
     @ManyToOne
-    private Article id_article;
+    private Article article;
 
     @ManyToOne
-    private Commande id_commande;
+    private Commande commande;
 
     private int quantite;
 }

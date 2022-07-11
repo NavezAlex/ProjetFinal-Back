@@ -23,4 +23,9 @@ public class Categorie {
 
     @OneToMany(mappedBy = "categorie")
     private List<Article> articles;
+
+    public Categorie(String nom, String description) {
+        this.nom = nom;
+        this.description = description;
+    }
 }

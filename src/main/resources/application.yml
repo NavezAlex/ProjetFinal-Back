@@ -1,0 +1,17 @@
+spring:
+  profiles:
+    active: prod
+  datasource:
+    username: user
+    password: pass
+    url: jdbc:h2:mem:projectFinal-Back
+  security:
+    user:
+      name: user
+      password: pass
+      roles:
+        #        - USER
+        - ADMIN
+  h2:
+    console:
+      enabled: true

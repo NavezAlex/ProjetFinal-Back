@@ -2,6 +2,8 @@ package projectFinal.models.form;
 
 import lombok.Data;
 import projectFinal.models.entity.Article;
+import projectFinal.models.entity.Categorie;
+import projectFinal.models.entity.Fournisseur;
 
 import javax.validation.constraints.AssertTrue;
 import javax.validation.constraints.NotBlank;
@@ -25,13 +27,22 @@ public class ArticleForm {
     @PositiveOrZero
     private int stock;
 
+    @Positive
+    private Fournisseur id_fournisseur;
+
+    @Positive
+    private Categorie id_categorie;
+
     public Article toEntity(){
         Article entity = new Article();
         entity.setName(name);
         entity.setDescription(description);
         entity.setPrix(prix);
+        entity.setActif(actif);
+        entity.setStock(stock);
+        entity.setCategorie(id_categorie);
+        entity.setFournisseur(id_fournisseur);
         return  entity;
     }
-
 
 }

@@ -18,7 +18,7 @@ public class Client extends Utilisateur{
     private String email;
     private LocalDate dateNaissance;
 
-    @OneToMany(mappedBy = "client_id")
+    @OneToMany(mappedBy = "client")
     private List<Commande> commandes;
 
     @Override

@@ -20,9 +20,11 @@ public class Commande {
 
     private LocalDate date;
     private boolean isComplet;
-    private boolean isAnnul;
+    private boolean isAnnul = false;
+
+    private float prix_total;
 
     @ManyToOne
-    private Client client_id;
+    private Client client;
 
 }

@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="fr"
+      xmlns:sec="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>tous les articles</title>
+</head>
+<body>
+<h2>Liste des Articles</h2>
+
+<p>taille de la liste: <span th:text="${articles.size}">5</span></p>
+
+<ul>
+    <li th:each="article : ${articles}" th:object="${article}">
+        <a th:text="*{name}"  href="#" th:href="@{ /article/{id}/details (id=*{id}, param='value') }" sec:authorize="isAuthenticated()">le nom de mon hotel</a>
+        <p th:text="*{name}" sec:authorize="isAnonymous()">le nom de mon hotel</p>
+    </li>
+</ul>
+
+</body>
+</html>
+

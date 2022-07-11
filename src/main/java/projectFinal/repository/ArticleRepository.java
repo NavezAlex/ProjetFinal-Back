@@ -13,8 +13,8 @@ public interface ArticleRepository extends JpaRepository<Article, Long> {
 
     List<Article> findByName(String name);
 
-    @Query(value = "SELECT * FROM article a WHERE a.categorie LIKE :cate", nativeQuery = true)
-    List<Article> findArticleByCategorie(@Param(value = "cate") String cate);
+    @Query(value = "SELECT * FROM article a WHERE a.categorie_id = :cate", nativeQuery = true)
+    List<Article> findArticleByCategorie(@Param(value = "cate") int cate);
 
     @Query(value = "SELECT * FROM article a WHERE a.fournisseur_id = :fournisseur", nativeQuery = true)
     List<Article> findArticleByFournisseur(@Param(value = "fournisseur") int fournisseur);

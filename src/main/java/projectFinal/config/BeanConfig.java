@@ -14,11 +14,5 @@ public class BeanConfig {
 
     Logger log = LoggerFactory.getLogger(BeanConfig.class);
 
-    @Bean
-    @Qualifier("console")
-    public Scanner scanner(@Value("test") String prop){
-        log.info( prop );
-        return new Scanner(System.in);
-    }
 
 }

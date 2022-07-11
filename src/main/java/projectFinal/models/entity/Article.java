@@ -10,6 +10,7 @@ import javax.persistence.*;
 @Entity
 @Getter @Setter
 @AllArgsConstructor
+@NoArgsConstructor
 public class Article {
 
     @Id
@@ -29,14 +30,16 @@ public class Article {
     @ManyToOne
     private Categorie categorie;
 
-    public Article() {
-    }
+//    public Article() {
+//    }
 
-    public Article(String name, String description, float prix, boolean actif, int stock) {
+    public Article(String name, String description, float prix, boolean actif, int stock, Fournisseur fournisseur, Categorie categorie) {
         this.name = name;
         this.description = description;
         this.prix = prix;
         this.actif = actif;
         this.stock = stock;
+        this.fournisseur = fournisseur;
+        this.categorie = categorie;
     }
 }

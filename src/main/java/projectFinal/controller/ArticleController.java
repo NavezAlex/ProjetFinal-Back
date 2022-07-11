@@ -1,5 +1,7 @@
 package projectFinal.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -15,6 +17,7 @@ public class ArticleController {
 
     private final ArticleService articleService ;
 
+    //@Autowired
     public ArticleController(ArticleService articleService) {
         this.articleService = articleService;
     }
@@ -48,10 +51,23 @@ public class ArticleController {
     }
 
     @PostMapping("/{id}/update")
-    public String processUpdate(@PathVariable long id, @ModelAttribute("hotel")ArticleUpdateForm form){
+    public String processUpdate(@PathVariable long id, @ModelAttribute("article")ArticleUpdateForm form){
         articleService.update(id, form);
         return "redirect:/article/"+id+"/details";
     }
+
+    @GetMapping("/categorie/{cate}")
+    public String displayCate( @PathVariable int cate ){
+        List<ArticleDTO> articles = articleService.getArticleByCategory(cate);
+        return "article/displayCate";
+    }
+
+    @GetMapping("/fournisseur/{fournisseur}")
+    public String displayFourn( @PathVariable int fournisseur ){
+        List<ArticleDTO> articles = articleService.getArticleByFournisseur(fournisseur);
+        return "article/displayFourn";
+    }
+
 
 
 }

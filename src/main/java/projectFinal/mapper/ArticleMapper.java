@@ -11,7 +11,6 @@ public class ArticleMapper {
     public ArticleDTO toDto(Article entity){
         if(entity == null) return null;
 
-
         ArticleDTO dto = new ArticleDTO();
 
         dto.setId(entity.getId());
@@ -35,14 +34,17 @@ public class ArticleMapper {
         return dto;
     }
 
-    public Article toEntity(ArticleForm form){
+    public Article toEntity(ArticleForm form) {
         if (form == null) return null;
+
         return new Article(
                 form.getName(),
                 form.getDescription(),
                 form.getPrix(),
                 form.isActif(),
-                form.getStock()
+                form.getStock(),
+                form.getId_fournisseur(),
+                form.getId_categorie()
         );
     }
 
