@@ -9,7 +9,7 @@ import projectFinal.models.entity.Fournisseur;
 public class ArticleDTO {
 
     private long id;
-    private String nom;
+    private String name;
     private String description;
     private float prix;
     private boolean actif;

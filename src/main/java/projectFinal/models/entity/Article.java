@@ -16,7 +16,7 @@ public class Article {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    private String nom;
+    private String name;
     private String description;
     private float prix;
     private boolean actif;
@@ -32,8 +32,8 @@ public class Article {
     public Article() {
     }
 
-    public Article(String nom, String description, float prix, boolean actif, int stock) {
-        this.nom = nom;
+    public Article(String name, String description, float prix, boolean actif, int stock) {
+        this.name = name;
         this.description = description;
         this.prix = prix;
         this.actif = actif;

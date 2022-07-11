@@ -15,7 +15,7 @@ public class ArticleMapper {
         ArticleDTO dto = new ArticleDTO();
 
         dto.setId(entity.getId());
-        dto.setNom(entity.getNom());
+        dto.setName(entity.getName());
         dto.setDescription(entity.getDescription());
         dto.setPrix(entity.getPrix());
         dto.setActif(entity.isActif());
@@ -38,7 +38,7 @@ public class ArticleMapper {
     public Article toEntity(ArticleForm form){
         if (form == null) return null;
         return new Article(
-                form.getNom(),
+                form.getName(),
                 form.getDescription(),
                 form.getPrix(),
                 form.isActif(),

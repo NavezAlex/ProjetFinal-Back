@@ -16,7 +16,7 @@ public class BeanConfig {
 
     @Bean
     @Qualifier("console")
-    public Scanner scanner(@Value("${ma.prop.custom}") String prop){
+    public Scanner scanner(@Value("test") String prop){
         log.info( prop );
         return new Scanner(System.in);
     }

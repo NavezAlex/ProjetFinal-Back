@@ -1,7 +1,6 @@
 package projectFinal.models.form;
 
 import lombok.Data;
-import projectFinal.models.entity.Article;
 
 import javax.validation.constraints.AssertTrue;
 import javax.validation.constraints.NotBlank;
@@ -9,29 +8,18 @@ import javax.validation.constraints.Positive;
 import javax.validation.constraints.PositiveOrZero;
 
 @Data
-public class ArticleForm {
-
+public class ArticleUpdateForm {
     @NotBlank
-    private String name;
+    private String nom;
 
     private String description;
 
     @Positive
-    private float prix;
+    private float prix = 0.0F;
 
     @AssertTrue
     private boolean actif;
 
     @PositiveOrZero
     private int stock;
-
-    public Article toEntity(){
-        Article entity = new Article();
-        entity.setName(name);
-        entity.setDescription(description);
-        entity.setPrix(prix);
-        return  entity;
-    }
-
-
 }
