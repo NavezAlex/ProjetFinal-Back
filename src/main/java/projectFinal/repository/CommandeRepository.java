@@ -4,7 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
-import projectFinal.models.entity.Article_Commande;
 import projectFinal.models.entity.Commande;
 
 import java.util.List;

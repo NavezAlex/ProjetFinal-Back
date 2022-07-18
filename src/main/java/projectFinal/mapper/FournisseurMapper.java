@@ -18,10 +18,10 @@ public class FournisseurMapper {
                 entity.getId(),
                 entity.getNom(),
                 entity.getAdresse(),
-                entity.getTelephone(),
-                entity.getArticles().stream()
-                        .map( aMapper::toDto)
-                        .toList()
+                entity.getTelephone()
+//                entity.getArticles().stream()
+//                        .map( aMapper::toDto)
+//                        .toList()
         );
     }
 

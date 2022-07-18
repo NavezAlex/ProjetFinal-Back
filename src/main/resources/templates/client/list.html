@@ -9,7 +9,7 @@
 <h3>Les clients</h3>
 
 <ul>
-    <li th:each="client: ${list}" th:object="${client}">
+    <li th:each="client: ${clients}" th:object="${clients}">
         <div>
             <div>
                 <span> id </span>
@@ -26,10 +26,6 @@
             <div>
                 <span> date de naissance </span>
                 <th:block th:text="*{dateNaissance}"></th:block>
-            </div>
-            <div>
-                <span> satisfaction </span>
-                <th:block th:text="*{satisfaction}" ></th:block>
             </div>
         </div>
     </li>

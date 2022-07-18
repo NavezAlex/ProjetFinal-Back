@@ -20,16 +20,8 @@ public class ArticleMapper {
         dto.setActif(entity.isActif());
         dto.setStock(entity.getStock());
 
-        ArticleDTO.FournisseurDTO fournisseurDTO = dto.new FournisseurDTO();
-        fournisseurDTO.setNom(entity.getFournisseur().getNom());
-        fournisseurDTO.setAdresse(entity.getFournisseur().getNom());
-        fournisseurDTO.setTelephone(entity.getFournisseur().getTelephone());
-        dto.setFournisseur(fournisseurDTO);
-
-        ArticleDTO.CategorieDTO categorieDTO = dto.new CategorieDTO();
-        categorieDTO.setNom(entity.getCategorie().getNom());
-        categorieDTO.setDescription(entity.getCategorie().getDescription());
-        dto.setCategorie(categorieDTO);
+        dto.setCategorie(entity.getCategorie());
+        dto.setFournisseur(entity.getFournisseur());
 
         return dto;
     }
@@ -43,8 +35,9 @@ public class ArticleMapper {
                 form.getPrix(),
                 form.isActif(),
                 form.getStock(),
-                form.getId_fournisseur(),
-                form.getId_categorie()
+                form.getPicture(),
+                form.getId_categorie(),
+                form.getId_fournisseur()
         );
     }
 

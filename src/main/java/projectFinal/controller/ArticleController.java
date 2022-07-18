@@ -4,23 +4,33 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import projectFinal.models.dto.ArticleDTO;
+import projectFinal.models.form.ArticleForm;
 import projectFinal.models.form.ArticleUpdateForm;
 import projectFinal.service.ArticleService;
+import projectFinal.service.CategorieService;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Controller
 @RequestMapping("/article")
 public class ArticleController {
 
-    private final ArticleService articleService ;
+    @Autowired
+    ArticleService articleService;
 
-    //@Autowired
-    public ArticleController(ArticleService articleService) {
-        this.articleService = articleService;
-    }
+    @Autowired
+    CategorieService categorieService;
+
+
+//    @GetMapping("/all")
+//    public String displayAll(Model model){
+//        List<ArticleDTO> articles = articleService.getAll();
+//        model.addAttribute("articles", articles);
+//    }
 
     @GetMapping("/all")
     public String displayAll(Model model){
@@ -35,6 +45,21 @@ public class ArticleController {
         return "article/displayOne";
     }
 
+    @GetMapping("/add")
+    public String createForm( @ModelAttribute("article") ArticleForm form ){
+        return "article/insert";
+    }
+
+    @PostMapping("/add")
+    public String processCreate(@Valid @ModelAttribute("article") ArticleForm form, BindingResult binding){
+
+        if( binding.hasErrors() )
+            return "article/insert";
+
+        long id = articleService.insert(form);
+        return "redirect:/article/"+id+"/details";
+    }
+
     @GetMapping("/{id}/update")
     public String updateForm(
             @PathVariable @ModelAttribute long id,
@@ -46,6 +71,7 @@ public class ArticleController {
         form.setDescription(dto.getDescription());
         form.setPrix(dto.getPrix());
         form.setStock(dto.getStock());
+        form.setId_categorie(dto.getCategorie());
 
         return "article/update";
     }
@@ -67,7 +93,5 @@ public class ArticleController {
         List<ArticleDTO> articles = articleService.getArticleByFournisseur(fournisseur);
         return "article/displayFourn";
     }
-
-
 
 }

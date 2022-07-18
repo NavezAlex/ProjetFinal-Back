@@ -13,6 +13,7 @@ public class ClientDTO {
     private long id;
     private String username;
     private String email;
+    private String password;
     private LocalDate dateNaissance;
 
     public static ClientDTO of(Client entity){
@@ -23,6 +24,7 @@ public class ClientDTO {
                 .id(entity.getId())
                 .username(entity.getUsername())
                 .email(entity.getEmail())
+                .password(entity.getPassword())
                 .dateNaissance(entity.getDateNaissance())
                 .build();
     }

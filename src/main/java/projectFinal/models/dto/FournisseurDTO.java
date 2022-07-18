@@ -14,8 +14,6 @@ public class FournisseurDTO {
     private String adresse;
     private long telephone;
 
-    private List<ArticleDTO> articles;
+//    private List<ArticleDTO> articles;
 
-    public FournisseurDTO() {
-    }
 }

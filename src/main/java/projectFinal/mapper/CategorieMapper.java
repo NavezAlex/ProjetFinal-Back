@@ -17,10 +17,10 @@ public class CategorieMapper {
         return new CategorieDTO(
                 entity.getId(),
                 entity.getNom(),
-                entity.getDescription(),
-                entity.getArticles().stream()
-                        .map( aMapper::toDto)
-                        .toList()
+                entity.getDescription()
+//                entity.getArticles().stream()
+//                        .map( aMapper::toDto)
+//                        .toList()
         );
     }
 

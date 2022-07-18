@@ -10,7 +10,7 @@ spring:
       name: user
       password: pass
       roles:
-        #        - USER
+#        - USER
         - ADMIN
   h2:
     console:

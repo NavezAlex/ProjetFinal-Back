@@ -1,15 +1,13 @@
 package projectFinal.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import projectFinal.mapper.ArticleMapper;
 import projectFinal.models.dto.ArticleDTO;
+import projectFinal.models.entity.Article;
+import projectFinal.models.entity.Categorie;
 import projectFinal.models.form.ArticleForm;
 import projectFinal.models.form.ArticleUpdateForm;
-import projectFinal.repository.ArticleRepository;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public interface ArticleService {
@@ -23,4 +21,5 @@ public interface ArticleService {
     List<ArticleDTO> getArticleByCategory(int category);
 
     List<ArticleDTO> getArticleByFournisseur(int fournisseur);
+
 }

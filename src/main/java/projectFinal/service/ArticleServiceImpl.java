@@ -1,5 +1,6 @@
 package projectFinal.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import projectFinal.mapper.ArticleMapper;
 import projectFinal.models.dto.ArticleDTO;
@@ -14,7 +15,7 @@ import java.util.stream.Collectors;
 @Service
 public class ArticleServiceImpl implements ArticleService {
 
-    //@Autowired
+    @Autowired
     private final ArticleRepository repository;
     private final ArticleMapper mapper;
 

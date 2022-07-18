@@ -1,6 +1,8 @@
 package projectFinal.models.form;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 import projectFinal.models.entity.Client;
 
@@ -8,6 +10,8 @@ import javax.validation.constraints.*;
 import java.time.LocalDate;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class ClientInsertForm {
 
     @NotBlank

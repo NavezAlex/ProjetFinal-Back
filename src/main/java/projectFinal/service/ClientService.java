@@ -31,4 +31,22 @@ public class ClientService {
         c.setPassword( encoder.encode(c.getPassword()) );
         return repository.save(c).getId();
     }
+
+    public Client findByUsername(String username) {
+        return repository.findByUsername(username);
+    }
+
+    public Client findByEmail(String email){
+        return repository.findByEmail(email);
+    }
+
+    public Client save(ClientDTO clientDTO){
+        Client client = new Client();
+        client.setUsername(clientDTO.getUsername());
+        client.setPassword(clientDTO.getPassword());
+        client.setEmail(clientDTO.getEmail());
+        client.setDateNaissance(clientDTO.getDateNaissance());
+        return repository.save(client) ;
+    }
+
 }

@@ -3,16 +3,10 @@ package projectFinal.utils;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
-import projectFinal.models.entity.Admin;
-import projectFinal.models.entity.Article;
-import projectFinal.models.entity.Categorie;
-import projectFinal.models.entity.Fournisseur;
-import projectFinal.repository.AdminRepository;
-import projectFinal.repository.ArticleRepository;
-import projectFinal.repository.CategorieRepository;
-import projectFinal.repository.FournisseurRepository;
+import projectFinal.models.entity.*;
+import projectFinal.repository.*;
 
-import java.util.List;
+import java.time.LocalDate;
 import java.util.UUID;
 
 @Component
@@ -21,20 +15,39 @@ public class DataInit implements InitializingBean {
     private final CategorieRepository categorieRepository;
     private final FournisseurRepository fournisseurRepository;
     private final AdminRepository adminRepository;
+    private final ClientRepository clientRepository;
     private final ArticleRepository articleRepository;
 
     private final PasswordEncoder passwordEncoder;
 
-    public DataInit(CategorieRepository categorieRepository, FournisseurRepository fournisseurRepository, AdminRepository adminRepository, ArticleRepository articleRepository, PasswordEncoder passwordEncoder) {
+    public DataInit(CategorieRepository categorieRepository, FournisseurRepository fournisseurRepository, AdminRepository adminRepository, ClientRepository clientRepository, ArticleRepository articleRepository, PasswordEncoder passwordEncoder) {
         this.categorieRepository = categorieRepository;
         this.fournisseurRepository = fournisseurRepository;
         this.adminRepository = adminRepository;
+        this.clientRepository = clientRepository;
         this.articleRepository = articleRepository;
         this.passwordEncoder = passwordEncoder;
     }
 
     @Override
     public void afterPropertiesSet() throws Exception {
+
+//        Client user = new Client();
+//        user.setId(1);
+//        user.setUsername("user");
+//        user.setPassword(passwordEncoder.encode("pass"));
+//        user.setEmail("user1.client@client.com");
+//        user.setDateNaissance(LocalDate.of(1993,03,03));
+//        clientRepository.save(user);
+//
+//        Admin admin = new Admin();
+//        admin.setId(1);
+//        admin.setUsername( "admin" );
+//        admin.setPassword( passwordEncoder.encode("admin") );
+//        admin.setRef( UUID.randomUUID() );
+//        adminRepository.save(admin);
+
+
 //        List<Fournisseur> toInsert = List.of(
 //                new Fournisseur("Fourni1", "rue du Premier", 111111111),
 //                new Fournisseur("Fourni-2", "rue du Deuxieme", 222222222),
@@ -50,13 +63,6 @@ public class DataInit implements InitializingBean {
 //                new Categorie("Jeu Vidéo", "Ceci est un jeu vidéo")
 //        );
 //        categorieRepository.saveAll(toPlace);
-//
-//
-//        Admin admin = new Admin();
-//        admin.setUsername( "admin" );
-//        admin.setPassword( passwordEncoder.encode("admin") );
-//        admin.setRef( UUID.randomUUID() );
-//        adminRepository.save(admin);
 //
 //
 //        List<Article> articlesToInsert = List.of(

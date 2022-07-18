@@ -3,6 +3,7 @@ package projectFinal.models.dto;
 import lombok.Data;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Data
 public class CommandeDTO {
@@ -14,13 +15,15 @@ public class CommandeDTO {
 
     private ClientDTO client_id;
 
-    @Data
-    public class ClientDTO{
+    //private List<ArticleDTO> articles_list;
 
-        private long id;
-        private String username;
-        private String email;
-        private LocalDate dateNaissance;
-    }
+//    @Data
+//    public class ClientDTO{
+//
+//        private long id;
+//        private String username;
+//        private String email;
+//        private LocalDate dateNaissance;
+//    }
 
 }

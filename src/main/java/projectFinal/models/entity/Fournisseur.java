@@ -22,8 +22,8 @@ public class Fournisseur {
     private String adresse;
     private long telephone;
 
-    @OneToMany(mappedBy = "fournisseur")
-    private List<Article> articles;
+//    @OneToMany(mappedBy = "fournisseur")
+//    private List<Article> articles;
 
     public Fournisseur(String nom, String adresse, long telephone) {
         this.nom = nom;

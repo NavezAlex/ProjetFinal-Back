@@ -19,27 +19,31 @@ public class Article {
 
     private String name;
     private String description;
-    private float prix;
+    private double prix;
     private boolean actif;
     private int stock;
+
+    private String pictureUrl;
+
+    @ManyToOne
+    private Categorie categorie;
 
     @ManyToOne
     private Fournisseur fournisseur;
 
 
-    @ManyToOne
-    private Categorie categorie;
-
 //    public Article() {
 //    }
 
-    public Article(String name, String description, float prix, boolean actif, int stock, Fournisseur fournisseur, Categorie categorie) {
+    public Article(String name, String description, double prix, boolean actif, int stock, String pictureUrl, Categorie categorie, Fournisseur fournisseur) {
         this.name = name;
         this.description = description;
         this.prix = prix;
         this.actif = actif;
         this.stock = stock;
-        this.fournisseur = fournisseur;
+        this.pictureUrl = pictureUrl;
         this.categorie = categorie;
+        this.fournisseur = fournisseur;
+
     }
 }

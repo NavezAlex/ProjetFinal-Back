@@ -13,9 +13,7 @@ public class CategorieDTO {
     private String nom;
     private String description;
 
-    private List<ArticleDTO> articles;
+//    private List<ArticleDTO> articles;
 
-    public CategorieDTO(){
-    }
 
 }

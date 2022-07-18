@@ -6,27 +6,27 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.List;
+import java.util.Date;
 
 @Entity
 @Getter @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Categorie {
-
+public class AuthenticationToken {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    private String nom;
-    private String description;
+    private String token;
 
-//    @OneToMany(mappedBy = "categorie")
-//    private List<Article> articles;
+    private Date createdDate;
 
+    @OneToOne(targetEntity = Utilisateur.class, fetch = FetchType.EAGER)
+    @JoinColumn(nullable = false, name = "id")
+    private Utilisateur utilisateur;
 
-    public Categorie(String nom, String description) {
-        this.nom = nom;
-        this.description = description;
+    public String getToken(){
+        return token;
     }
+
 }

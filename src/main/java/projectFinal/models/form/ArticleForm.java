@@ -19,7 +19,7 @@ public class ArticleForm {
     private String description;
 
     @Positive
-    private float prix;
+    private double prix;
 
     @AssertTrue
     private boolean actif;
@@ -27,11 +27,14 @@ public class ArticleForm {
     @PositiveOrZero
     private int stock;
 
-    @Positive
-    private Fournisseur id_fournisseur;
+    private String picture;
 
     @Positive
     private Categorie id_categorie;
+
+    @Positive
+    private Fournisseur id_fournisseur;
+
 
     public Article toEntity(){
         Article entity = new Article();
@@ -40,9 +43,9 @@ public class ArticleForm {
         entity.setPrix(prix);
         entity.setActif(actif);
         entity.setStock(stock);
+        entity.setPictureUrl(picture);
         entity.setCategorie(id_categorie);
         entity.setFournisseur(id_fournisseur);
         return  entity;
     }
-
 }
