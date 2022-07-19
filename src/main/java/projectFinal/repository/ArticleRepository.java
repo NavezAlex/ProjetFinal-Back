@@ -19,4 +19,7 @@ public interface ArticleRepository extends JpaRepository<Article, Long> {
     @Query(value = "SELECT * FROM article a WHERE a.fournisseur_id = :fournisseur", nativeQuery = true)
     List<Article> findArticleByFournisseur(@Param(value = "fournisseur") int fournisseur);
 
+    @Query(value = "SELECT * FROM article a WHERE a.actif=1", nativeQuery = true)
+    List<Article> findAllActive();
+
 }

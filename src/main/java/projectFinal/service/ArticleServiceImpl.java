@@ -74,4 +74,18 @@ public class ArticleServiceImpl implements ArticleService {
                 .collect(Collectors.toList());
     }
 
+    @Override
+    public List<Article> findAllByActive() {
+        return repository.findAllActive();
+    }
+
+    public void save(Article article){
+        repository.save(article);
+    }
+
+    public void delete(long id) {
+        repository.deleteById(id);
+    }
+
+
 }

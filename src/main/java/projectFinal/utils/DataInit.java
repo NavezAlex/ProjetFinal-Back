@@ -7,6 +7,7 @@ import projectFinal.models.entity.*;
 import projectFinal.repository.*;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.UUID;
 
 @Component
@@ -32,22 +33,22 @@ public class DataInit implements InitializingBean {
     @Override
     public void afterPropertiesSet() throws Exception {
 
-//        Client user = new Client();
-//        user.setId(1);
-//        user.setUsername("user");
-//        user.setPassword(passwordEncoder.encode("pass"));
-//        user.setEmail("user1.client@client.com");
-//        user.setDateNaissance(LocalDate.of(1993,03,03));
-//        clientRepository.save(user);
-//
 //        Admin admin = new Admin();
 //        admin.setId(1);
 //        admin.setUsername( "admin" );
 //        admin.setPassword( passwordEncoder.encode("admin") );
 //        admin.setRef( UUID.randomUUID() );
 //        adminRepository.save(admin);
-
-
+//
+//        Client user = new Client();
+//        user.setId(2);
+//        user.setUsername("user");
+//        user.setPassword(passwordEncoder.encode("pass"));
+//        user.setEmail("user1.client@client.com");
+//        user.setDateNaissance(LocalDate.of(1993,03,03));
+//        clientRepository.save(user);
+//
+//
 //        List<Fournisseur> toInsert = List.of(
 //                new Fournisseur("Fourni1", "rue du Premier", 111111111),
 //                new Fournisseur("Fourni-2", "rue du Deuxieme", 222222222),
@@ -63,8 +64,8 @@ public class DataInit implements InitializingBean {
 //                new Categorie("Jeu Vidéo", "Ceci est un jeu vidéo")
 //        );
 //        categorieRepository.saveAll(toPlace);
-//
-//
+
+
 //        List<Article> articlesToInsert = List.of(
 //                new Article(1,"Set de Dé","",2,true,100,fournisseurRepository.getReferenceById(1L), categorieRepository.getReferenceById(3L)),
 //                new Article("Livre 1 Actif","",10,true,50,fournisseurRepository.getReferenceById(2L), categorieRepository.getReferenceById(1L)),

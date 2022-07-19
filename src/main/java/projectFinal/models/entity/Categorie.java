@@ -18,15 +18,15 @@ public class Categorie {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    private String nom;
+    private String name;
     private String description;
 
 //    @OneToMany(mappedBy = "categorie")
 //    private List<Article> articles;
 
 
-    public Categorie(String nom, String description) {
-        this.nom = nom;
+    public Categorie(String name, String description) {
+        this.name = name;
         this.description = description;
     }
 }

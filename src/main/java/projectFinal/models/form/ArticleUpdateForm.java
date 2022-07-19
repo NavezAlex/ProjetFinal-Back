@@ -17,7 +17,7 @@ public class ArticleUpdateForm {
     private String description;
 
     @Positive
-    private double prix = 0.0F;
+    private float prix = 0.0F;
 
     @AssertTrue
     private boolean actif;

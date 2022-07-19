@@ -16,7 +16,7 @@ public class CategorieMapper {
 
         return new CategorieDTO(
                 entity.getId(),
-                entity.getNom(),
+                entity.getName(),
                 entity.getDescription()
 //                entity.getArticles().stream()
 //                        .map( aMapper::toDto)

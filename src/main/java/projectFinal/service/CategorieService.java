@@ -18,8 +18,14 @@ public class CategorieService {
         return categorieRepository.findAll();
     }
 
+    public Categorie findByName(String name){ return categorieRepository.findByName(name); }
+
     public void createCategorie(Categorie categorie){
         categorieRepository.save(categorie);
+    }
+
+    public Categorie get(long id){
+        return categorieRepository.findById(id).get();
     }
 
     public Optional<Categorie> readCategory(long categoryId) {
@@ -28,9 +34,16 @@ public class CategorieService {
 
     public void updateCategory(long categoryID, Categorie newCategory) {
         Categorie category = categorieRepository.findById(categoryID).get();
-        category.setNom(newCategory.getNom());
+        category.setName(newCategory.getName());
         category.setDescription(newCategory.getDescription());
         categorieRepository.save(category);
     }
 
+    public void delete(long id){
+        categorieRepository.deleteById(id);
+    }
+
+    public List<Categorie> findAll() {
+        return categorieRepository.findAll();
+    }
 }

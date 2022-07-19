@@ -12,7 +12,7 @@ public class ArticleDTO {
     private long id;
     private String name;
     private String description;
-    private double prix;
+    private float prix;
     private boolean actif;
     private int stock;
     private String pictureUrl;

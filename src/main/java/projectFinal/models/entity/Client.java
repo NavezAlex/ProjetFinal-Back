@@ -8,6 +8,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.validation.constraints.Email;
 import java.time.LocalDate;
 import java.util.Collection;
@@ -24,6 +25,9 @@ public class Client extends Utilisateur{
 
     @OneToMany(mappedBy = "client")
     private List<Commande> commandes;
+
+    @OneToOne(mappedBy = "client")
+    private Panier panier;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

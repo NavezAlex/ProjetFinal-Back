@@ -19,7 +19,7 @@ public class ArticleForm {
     private String description;
 
     @Positive
-    private double prix;
+    private float prix;
 
     @AssertTrue
     private boolean actif;

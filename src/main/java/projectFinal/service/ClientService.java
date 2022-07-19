@@ -10,12 +10,12 @@ import projectFinal.repository.ClientRepository;
 import java.util.List;
 
 @Service
-public class ClientService {
+public class ClientService  {
 
-    private final ClientRepository repository;
-    private final PasswordEncoder encoder;
+    private ClientRepository repository;
+    private PasswordEncoder encoder;
 
-    public ClientService(ClientRepository repository, PasswordEncoder encoder) {
+    public ClientService() {
         this.repository = repository;
         this.encoder = encoder;
     }
@@ -43,10 +43,15 @@ public class ClientService {
     public Client save(ClientDTO clientDTO){
         Client client = new Client();
         client.setUsername(clientDTO.getUsername());
-        client.setPassword(clientDTO.getPassword());
+        client.setPassword( encoder.encode(clientDTO.getPassword()) );
         client.setEmail(clientDTO.getEmail());
         client.setDateNaissance(clientDTO.getDateNaissance());
         return repository.save(client) ;
     }
+
+    public Client save(Client client){
+        return repository.save(client);
+    }
+
 
 }

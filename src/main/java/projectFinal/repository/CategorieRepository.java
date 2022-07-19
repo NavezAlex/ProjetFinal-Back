@@ -6,4 +6,5 @@ import projectFinal.models.entity.Categorie;
 
 @Repository
 public interface CategorieRepository extends JpaRepository<Categorie, Long> {
+    Categorie findByName(String name);
 }

@@ -3,7 +3,6 @@ package projectFinal.service;
 import org.springframework.stereotype.Service;
 import projectFinal.models.dto.ArticleDTO;
 import projectFinal.models.entity.Article;
-import projectFinal.models.entity.Categorie;
 import projectFinal.models.form.ArticleForm;
 import projectFinal.models.form.ArticleUpdateForm;
 
@@ -21,5 +20,7 @@ public interface ArticleService {
     List<ArticleDTO> getArticleByCategory(int category);
 
     List<ArticleDTO> getArticleByFournisseur(int fournisseur);
+
+    List<Article> findAllByActive();
 
 }

@@ -7,6 +7,8 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import projectFinal.models.dto.ArticleDTO;
+import projectFinal.models.entity.Article;
+import projectFinal.models.entity.Categorie;
 import projectFinal.models.form.ArticleForm;
 import projectFinal.models.form.ArticleUpdateForm;
 import projectFinal.service.ArticleService;
@@ -60,7 +62,7 @@ public class ArticleController {
         return "redirect:/article/"+id+"/details";
     }
 
-    @GetMapping("/{id}/update")
+    @GetMapping("/edit/{id}")
     public String updateForm(
             @PathVariable @ModelAttribute long id,
             @ModelAttribute("article") ArticleUpdateForm form
@@ -76,10 +78,20 @@ public class ArticleController {
         return "article/update";
     }
 
-    @PostMapping("/{id}/update")
+    @PostMapping("/edit/{id}")
     public String processUpdate(@PathVariable long id, @ModelAttribute("article")ArticleUpdateForm form){
         articleService.update(id, form);
         return "redirect:/article/"+id+"/details";
+    }
+
+    @GetMapping("/list")
+    public String listArticle(Model model){
+        List<Categorie> categories = categorieService.findAll();
+        model.addAttribute("categories", categories);
+
+        List<Article> listArticles = articleService.findAllByActive();
+        model.addAttribute("listArticles", listArticles);
+        return "/article/list-article";
     }
 
     @GetMapping("/categorie/{cate}")
